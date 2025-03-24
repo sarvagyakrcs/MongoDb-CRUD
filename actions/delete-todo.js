@@ -1,6 +1,9 @@
 "use server";
 
-async function deleteTodo(id) {
+import {prisma} from "@/lib/db"
+
+
+export async function deleteTodo(id) {
   try {
     await prisma.todo.delete({
       where: { id },

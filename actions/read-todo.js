@@ -1,6 +1,9 @@
 "use server"
 
-async function readTodos() {
+import {prisma} from "@/lib/db"
+
+
+export async function readTodos() {
     try {
         return await prisma.todo.findMany();
     } catch (error) {
